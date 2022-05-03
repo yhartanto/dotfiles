@@ -1,0 +1,46 @@
+shell: zsh
+flavor: android
+region: oregon
+packages:
+  - catimg
+  - fd-find
+  - fzf
+  - htop
+  - jq
+  - ncdu
+  - neofetch
+  - ranger
+  - screen
+  - https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
+  - https://github.com/dandavison/delta/releases/download/0.8.3/git-delta-musl_0.8.3_amd64.deb
+
+ide:
+  jetbrains:
+    plugins:
+      - 164 # IdeaVIM
+      - 7086 # AceJump
+      - 13360 # EasyMotion
+      - 7380 # ADB Idea
+      - 12507 # Package Search
+      - 10102 # OK Gradle
+
+repositories:
+  - dest: /tmp/powerlevel10k # Temp folder because oh-my-zsh wants empty .oh-my-zsh
+    repo: https://github.com/romkatv/powerlevel10k.git
+  - dest: /tmp/dotfiles
+    repo: https://github.com/yhartanto/dotfiles.git
+    update: true
+
+tasks:
+  - name: Install oh-my-zsh
+    command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    when: on-create
+  - name: Set powerlevel10k as the ZSH theme
+    command: sed -i 's#robbyrussell#powerlevel10k/powerlevel10k#' /home/user/.zshrc
+    when: on-create
+  - name: Move power10k repo
+    command: mv /tmp/powerlevel10k /home/user/.oh-my-zsh/custom/themes/powerlevel10k
+    when: on-create
+  - name: Copy latest zsh dotfiles into home
+    command: cp -abf /tmp/dotfiles/zsh/. /home/user
+    when: on-create,on-restart
