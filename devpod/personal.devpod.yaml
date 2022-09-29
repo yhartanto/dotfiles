@@ -26,8 +26,9 @@ ide:
 repositories:
   - dest: /tmp/powerlevel10k # Temp folder because oh-my-zsh wants empty .oh-my-zsh
     repo: https://github.com/romkatv/powerlevel10k.git
-  - dest: /tmp/terminals/diff-so-fancy 
+  - dest: /home/user/terminals/diff-so-fancy
     repo: https://github.com/so-fancy/diff-so-fancy.git
+    update: true
   - dest: /tmp/dotfiles
     repo: https://github.com/yhartanto/dotfiles.git
     update: true
@@ -42,9 +43,6 @@ tasks:
   - name: Move power10k repo
     command: mv /tmp/powerlevel10k /home/user/.oh-my-zsh/custom/themes/powerlevel10k
     when: on-create
-  - name: Move diff-so-fancy repo
-    command: mv /tmp/terminals/diff-so-fancy /home/user/terminals/diff-so-fancy
-    when: on-create,on-restart
   - name: Copy latest zsh dotfiles into home
     command: cp -abf /tmp/dotfiles/zsh/. /home/user
     when: on-create,on-restart
