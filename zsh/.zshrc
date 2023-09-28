@@ -120,3 +120,5 @@ git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 
 eval "$(direnv hook zsh)"
+
+alias update_diff="git add . && git commit --amend --no-edit && arc diff --no-amend"
