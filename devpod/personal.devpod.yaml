@@ -14,15 +14,6 @@ packages:
   - https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
   - https://github.com/dandavison/delta/releases/download/0.8.3/git-delta-musl_0.8.3_amd64.deb
 
-ide:
-  jetbrains:
-    plugins:
-      - 7086 # AceJump
-      - 13360 # EasyMotion
-      - 7380 # ADB Idea
-      - 12507 # Package Search
-      - 10102 # OK Gradle
-
 repositories:
   - dest: /tmp/powerlevel10k # Temp folder because oh-my-zsh wants empty .oh-my-zsh
     repo: https://github.com/romkatv/powerlevel10k.git
