@@ -81,7 +81,6 @@ setopt INC_APPEND_HISTORY_TIME
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-path+=($HOME'/terminals/diff-so-fancy')
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -115,10 +114,4 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-git config --global interactive.diffFilter "diff-so-fancy --patch"
-
-
 eval "$(direnv hook zsh)"
-
-alias update_diff="git add . && git commit --amend --no-edit && arc diff --no-amend"
