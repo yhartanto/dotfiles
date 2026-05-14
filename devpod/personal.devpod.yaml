@@ -2,6 +2,9 @@ shell: zsh
 flavor: android
 region: oregon
 
+packages:
+  fd-find
+  
 repositories:
   - dest: /tmp/powerlevel10k # Temp folder because oh-my-zsh wants empty .oh-my-zsh
     repo: https://github.com/romkatv/powerlevel10k.git
