@@ -16,7 +16,9 @@ autoload -Uz compinit
 compinit
 
 POWERLEVEL10K_HOME="${POWERLEVEL10K_HOME:-$HOME/.powerlevel10k}"
-source "$POWERLEVEL10K_HOME/powerlevel10k.zsh-theme"
+if [[ -r "$POWERLEVEL10K_HOME/powerlevel10k.zsh-theme" ]]; then
+  source "$POWERLEVEL10K_HOME/powerlevel10k.zsh-theme"
+fi
 P10K_CONFIG="${ZDOTDIR:-$HOME}/.p10k.zsh"
 [[ ! -r "$P10K_CONFIG" ]] || source "$P10K_CONFIG"
 unset P10K_CONFIG
