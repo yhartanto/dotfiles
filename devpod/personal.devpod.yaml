@@ -17,15 +17,9 @@ repositories:
 
 tasks:
   - name: Install Powerlevel10k
-    command: |
-      if [ -r /home/user/.powerlevel10k/powerlevel10k.zsh-theme ]; then
-        exit 0
-      elif [ -r /tmp/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    command: 
         mv /tmp/powerlevel10k /home/user/.powerlevel10k
-      else
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/user/.powerlevel10k
-      fi
-    when: on-create,on-restart
+    when: on-create
   - name: Copy latest zsh dotfiles into home
     command: cp -abf /tmp/dotfiles/zsh/. /home/user
     when: on-create,on-restart
