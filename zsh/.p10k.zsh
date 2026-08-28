@@ -955,13 +955,13 @@
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=249
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=254
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=024
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=249
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=254
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=024
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=249
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=254
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=024
 
   # Context format when running with privileges: user@hostname.
